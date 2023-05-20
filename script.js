@@ -37,10 +37,11 @@ function displayTimeLeft(seconds) {
 }
 
 startButton.addEventListener('click', () => {
-    const hours = parseInt(hoursInput.value);
-    const minutes = parseInt(minutesInput.value);
-    const seconds = parseInt(secondsInput.value);
-    if (!isNaN(hours) && !isNaN(minutes) && !isNaN(seconds) && hours >= 0 && minutes >= 0 && minutes < 60 && seconds >= 0 && seconds < 60) {
+    const hours = parseInt(hoursInput.value) || 0;
+    const minutes = parseInt(minutesInput.value) || 0;
+    const seconds = parseInt(secondsInput.value) || 0;
+    
+    if (hours >= 0 && minutes >= 0 && seconds >= 0) {
         timer((hours * 3600) + (minutes * 60) + seconds);
     } else {
         alert('Please enter valid time!');
