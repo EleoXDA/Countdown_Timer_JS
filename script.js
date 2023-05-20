@@ -2,6 +2,7 @@ const hoursInput = document.querySelector('#hours-input');
 const minutesInput = document.querySelector('#minutes-input');
 const secondsInput = document.querySelector('#seconds-input');
 const startButton = document.querySelector('#start-btn');
+const resetButton = document.querySelector('#reset-btn');
 const timerDisplay = document.querySelector('#timer-display');
 
 let countdown;
@@ -40,10 +41,18 @@ startButton.addEventListener('click', () => {
     const hours = parseInt(hoursInput.value) || 0;
     const minutes = parseInt(minutesInput.value) || 0;
     const seconds = parseInt(secondsInput.value) || 0;
-    
+
     if (hours >= 0 && minutes >= 0 && seconds >= 0) {
         timer((hours * 3600) + (minutes * 60) + seconds);
     } else {
         alert('Please enter valid time!');
     }
+});
+
+resetButton.addEventListener('click', () => {
+    hoursInput.value = '';
+    minutesInput.value = '';
+    secondsInput.value = '';
+    timerDisplay.textContent = '00:00:00';
+    clearInterval(countdown);
 });

@@ -14,14 +14,17 @@
             </div>
             <div>
                 <label for="minutes-input">Minutes</label><br>
-                <input type="number" id="minutes-input" min="0" max="59" placeholder="0">
+                <input type="number" id="minutes-input" min="0" placeholder="0">
             </div>
             <div>
                 <label for="seconds-input">Seconds</label><br>
-                <input type="number" id="seconds-input" min="0" max="59" placeholder="0">
+                <input type="number" id="seconds-input" min="0" placeholder="0">
             </div>
         </div>
-        <button id="start-btn">Start</button>
+        <div id="button-container">
+            <button id="start-btn">Start</button>
+            <button id="reset-btn">Reset</button>
+        </div>
         <h2 id="timer-display">00:00:00</h2>
     </div>
     <script src="script.js"></script>
