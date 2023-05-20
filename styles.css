@@ -9,10 +9,48 @@ body {
 
 #app {
     text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #2f3640;
+    margin-bottom: 30px;
+}
+
+#time-input {
+    border: 2px solid #2f3640;
+    border-radius: 5px;
+    height: 30px;
+    width: 200px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#start-btn {
+    display: inline-block;
+    background-color: #2f3640;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#start-btn:hover {
+    background-color: #576574;
 }
 
 #timer-display {
     color: #2f3640;
     font-size: 2em;
     margin-top: 20px;
+    border: 2px solid #2f3640;
+    padding: 20px;
+    border-radius: 10px;
 }
