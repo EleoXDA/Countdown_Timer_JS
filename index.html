@@ -7,8 +7,20 @@
 <body>
     <div id="app">
         <h1>Countdown Timer</h1>
-        <label for="time-input">Enter time in seconds</label><br>
-        <input type="number" id="time-input" placeholder="Eg: 65 for 1 min 5 sec">
+        <div id="input-container">
+            <div>
+                <label for="hours-input">Hours</label><br>
+                <input type="number" id="hours-input" min="0" placeholder="0">
+            </div>
+            <div>
+                <label for="minutes-input">Minutes</label><br>
+                <input type="number" id="minutes-input" min="0" max="59" placeholder="0">
+            </div>
+            <div>
+                <label for="seconds-input">Seconds</label><br>
+                <input type="number" id="seconds-input" min="0" max="59" placeholder="0">
+            </div>
+        </div>
         <button id="start-btn">Start</button>
         <h2 id="timer-display">00:00:00</h2>
     </div>
