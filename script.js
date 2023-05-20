@@ -1,12 +1,12 @@
-// select elements
-const timeInput = document.querySelector('#time-input');
+const hoursInput = document.querySelector('#hours-input');
+const minutesInput = document.querySelector('#minutes-input');
+const secondsInput = document.querySelector('#seconds-input');
 const startButton = document.querySelector('#start-btn');
 const timerDisplay = document.querySelector('#timer-display');
 
 let countdown;
 
 function timer(seconds) {
-    // clear any existing timers
     clearInterval(countdown);
 
     const now = Date.now();
@@ -17,14 +17,12 @@ function timer(seconds) {
     countdown = setInterval(() => {
         const secondsLeft = Math.round((then - Date.now()) / 1000);
 
-        // check if timer should stop
         if(secondsLeft < 0) {
             clearInterval(countdown);
             alert('Timer Finished!');
             return;
         }
 
-        // display time left
         displayTimeLeft(secondsLeft);
     }, 1000);
 }
@@ -39,10 +37,12 @@ function displayTimeLeft(seconds) {
 }
 
 startButton.addEventListener('click', () => {
-    const time = parseInt(timeInput.value);
-    if (!isNaN(time) && time > 0) {
-        timer(time);
+    const hours = parseInt(hoursInput.value);
+    const minutes = parseInt(minutesInput.value);
+    const seconds = parseInt(secondsInput.value);
+    if (!isNaN(hours) && !isNaN(minutes) && !isNaN(seconds) && hours >= 0 && minutes >= 0 && minutes < 60 && seconds >= 0 && seconds < 60) {
+        timer((hours * 3600) + (minutes * 60) + seconds);
     } else {
-        alert('Please enter a valid number!');
+        alert('Please enter valid time!');
     }
 });
