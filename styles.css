@@ -12,6 +12,17 @@ body {
   border-radius: 20px;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  #app {
+    width: 80%;
+    box-sizing: border-box;
+  }
+}
+
 h1 {
   color: #2f3640;
   margin-bottom: 30px;
