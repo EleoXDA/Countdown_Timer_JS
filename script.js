@@ -19,6 +19,7 @@ function timer(seconds) {
 
         if (secondsLeft < 0) {
             clearInterval(countdown);
+            countdown = null;
             alert('Timer Finished!');
             localStorage.removeItem('endTime');
             return;
@@ -38,6 +39,9 @@ function displayTimeLeft(seconds) {
 }
 
 startButton.addEventListener('click', () => {
+    if (countdown) {
+      return;
+    }
     const hours = parseInt(hoursInput.value) || 0;
     const minutes = parseInt(minutesInput.value) || 0;
     const seconds = parseInt(secondsInput.value) || 0;
@@ -58,6 +62,7 @@ resetButton.addEventListener('click', () => {
     secondsInput.value = '';
     timerDisplay.textContent = '00:00:00';
     clearInterval(countdown);
+    countdown = null;
     localStorage.removeItem('endTime');
     localStorage.removeItem('hours');
     localStorage.removeItem('minutes');
@@ -82,6 +87,7 @@ window.addEventListener('load', () => {
         }
     }
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     var themeSelector = document.getElementById('theme-selector');
   
