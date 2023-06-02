@@ -3,6 +3,7 @@
 <head>
     <title>Countdown Timer</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div id="app">
@@ -26,6 +27,13 @@
             <button id="reset-btn">Reset</button>
         </div>
         <h2 id="timer-display">00:00:00</h2>
+    </div>
+    <div class="theme-selector-container center">
+      <label for="theme-selector">Choose a theme:</label>
+      <select id="theme-selector">
+        <option value="theme-default">Light</option>
+        <option value="theme-dark">Dark</option>
+      </select>
     </div>
     <script src="script.js"></script>
 </body>

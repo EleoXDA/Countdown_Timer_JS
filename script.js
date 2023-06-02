@@ -87,6 +87,7 @@ window.addEventListener('load', () => {
         }
     }
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     var themeSelector = document.getElementById('theme-selector');
   
